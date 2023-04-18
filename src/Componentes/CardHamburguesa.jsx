@@ -1,22 +1,52 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import MiContexto from "../Contexto/MiContexto.jsx";
+import { FiHeart } from "react-icons/fi";
 
-const CardHamburguesa = () => {
+
+const CardHamburguesa = ({ burger, fav }) => {
+  const { agregarHamburguesa, hamburguesas, setHamburguesas, conectado } = useContext(MiContexto);
+  const navigate = useNavigate();
+
+
+    
+          const setFav = (id) => {
+
+            const burgerIndex =  hamburguesas.findIndex((burg)=> burg.id === id)
+            hamburguesas[burgerIndex].liked = !hamburguesas[burgerIndex].liked;
+            setHamburguesas([...hamburguesas]);
+            
+           };
+
+  const verDetalle = () => {
+    navigate(`/detalle/${burger.id}`)
+  }
+ 
   return (
-    <div>
-        <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src="holder.js/100px180" />
-    <Card.Body>
-      <Card.Title>Card Title</Card.Title>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the
-        bulk of the card's content.
-      </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
-    </Card.Body>
-  </Card>
+    <div className="card-container" >
+      <div className="cardimg">
+        <img src={burger.img} alt="imagen-hamburguesa" className="imagen"></img>
+        
+        {conectado && !fav && <FiHeart className={burger.liked?'liked':'heart'} onClick={() => setFav(burger.id)}/>}
+      
+      </div>
+      <h4>
+        {burger.nombre}
+      </h4>
+      <p className="desc"> {burger.desc}</p>
+      <p> Precio: $ {burger.precio.toLocaleString({
+        style: "currency",
+        currency: "CPL"
+      })}
+      </p>
+      <div className='buttonsdiv'>
+        <button onClick={() => verDetalle()}>Ver Detalle 👀</button>
+        <button onClick={() => agregarHamburguesa(burger)}>Añadir al carrito 🍔</button>
+      </div>
 
-</div>
+    </div>
   )
 }
 
-export default CardHamburguesa
+export default CardHamburguesa;
+

@@ -1,43 +1,60 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import MiContexto from '../Contexto/MiContexto';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
+  const navigate = useNavigate();
+  const { listaUsuarios, setConectado, setUsuarioActual } = useContext(MiContexto);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
+   const validarUsuario = () => {
+       
+    
+
+    const usuarioValido = listaUsuarios.find((usuario)=>  usuario.email === email && usuario.clave === password)
+    if (usuarioValido) {
+  
+      setConectado(true)
+      setUsuarioActual(usuarioValido)
+      navigate(`/perfil`)
+   
+    }
+    else {
+      alert("usuario o clave incorrecto")
+    }
+ 
+  }
+
   return (
 
-    <div className='login-box'>
-        <h2>Iniciar sesión</h2>
+    <div className='login-view'>
+      <div className='login-box'>
+        <h4>Iniciar sesión</h4>
         <form>
-        <div className='user-box'>
-          <input type='text' placeholder='nombre'></input>
-        </div>
-        <div className='user-box'>
-          <input type='password' placeholder='contraseña'></input>
-        </div>
-
-        <div className='button-form'>
-          <NavLink to="/" id='submit'><button variant="primary">Iniciar Sesión</button></NavLink>
-          <div id='registrar'>
-            No te has registrado? 
-            <NavLink to="/" id='resgistrar'><button>Registrate</button></NavLink>
+          <div className='user-box'>
+            <input type='email' placeholder='Email' onChange={(e)=> setEmail(e.target.value)}></input>
           </div>
-        </div>
+          <div className='user-box'>
+            <input type='password' placeholder='Contraseña' onChange={(e)=> setPassword(e.target.value)}></input>
+          </div>
 
-  </form>
+          <div className='button-form'>
+            <button className='resgistrar' onClick={()=> validarUsuario()}>Iniciar Sesión</button>
+            <div id='registrar'>
+              ¿No te has registrado?
+              <NavLink to="/registro"><button>Registrate</button></NavLink>
+            </div>
+          </div>
+
+        </form>
+      </div>
     </div>
 
-    // <div className='p-5 bg-light text-login'>
-    //   <h1>Iniciar sesión en BurgerTown</h1>
-    //   <h4 className='mt-4'>Nombre de usuario:</h4>
-    //   <input type="text" placeholder='Escribe tu nombre de usuario' className='inputsz' />
-    //   <h4 className='mt-4'>Conrtraseña</h4>
-    //   <input type="text" placeholder='Escribe tu contraseña' className='inputsz' />
-    //   <div className='mt-4'>
-    //     <NavLink to="/"><Button variant="primary">Iniciar Sesión</Button></NavLink>
-    //   </div>
-    //   <p className='mt-4'>¿No estás registrado? <NavLink to="/registro">Registraté Aquí</NavLink></p>
-    //  </div>
   )
 }
 
 export default Login
-

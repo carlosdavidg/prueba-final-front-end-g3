@@ -1,75 +1,112 @@
+* {
+    font-family: cursive;
+    box-sizing: border-box;
+
+}
+/* EFECTOS EN LA BARRA */
 .active{
-    color:#fff;
+    color:#ffffff;
     margin-left: 1em;
     text-decoration: none;
-    font-family: Tahoma, sans-serif;
-    font-size:20px;
+    font-size: 1.5em;
     font-weight: bold;
     text-shadow: 
         0 0 7px #fff,
         0 0 21px #fff,
-        0 0 42px #5271ff,
-        0 0 82px #5271ff,
-        0 0 92px #5271ff;
-
+        0 0 42px #FFC300,
+        0 0 82px #FFC300,
+        0 0 92px #FFC300;
 }
-.active:hover{
-    color:#5271ff;
+#letras:hover{
+    color:#fff;
+    text-shadow: 
+    0 0 7px #fff,
+    0 0 21px #fff,
+    0 0 42px #FFC300,
+    0 0 82px #FFC300,
+    0 0 92px #FFC300;
 }
-.no-active{
-    color:white;
-    margin-left: 1em;
+.no-active {
     text-decoration: none;
-    font-family: Tahoma, sans-serif;
-    font-size: 20px;
+    color:white;
+    margin-left: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
     padding:4px;
 }
 .no-active:hover{
-    color:#5271ff;
+    color:#ffffff;
+    text-decoration: none;
 }
 .barra{
     background: transparent;
+    color: #ffffff;
+    width: 100%;
+    height: 6.5rem;
+    letter-spacing: 0.5px;
+    
 }
+
+.barra-scrolled{
+  background-color: #010a01;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.carrito:hover{
+  transform: rotate(-25deg)
+  scale3d(1.8,1.8,1.8);
+  transition: all .3s;
+}
+.navtoggle {
+    color: #ffffff;
+}
+
 .logo{
     color:#fff;
     font-family: Tahoma, sans-serif;
-    font-size:40px;
+    font-size: 2rem;
     text-decoration: none;
     font-weight: bold;
-
+    text-decoration: none;
 }
 .logo:hover{
     color: #fff;
+    text-decoration: none;
     text-shadow: 
         0 0 7px #fff,
         0 0 21px #fff,
-        0 0 42px #5271ff,
-        0 0 82px #5271ff,
-        0 0 92px #5271ff;
-
+        0 0 42px #FFC300,
+        0 0 82px #FFC300,
+        0 0 92px #FFC300;
 }
 .logo2{
     color:#fff;
-    font-family: Tahoma, sans-serif;
-    font-size:20px;
-    text-decoration: none;
+    font-size:2rem;
     padding-left: 1em;
     font-weight: bold;
     
 }
 .logo2:hover{
-    color: #fff;
+    color: #FFf;
+    text-decoration: none;
     text-shadow: 
         0 0 7px #fff,
         0 0 21px #fff,
-        0 0 42px #5271ff,
-        0 0 82px #5271ff,
-        0 0 92px #5271ff;
-
+        0 0 42px #FFC300,
+        0 0 82px #FFC300,
+        0 0 92px #FFC300;
 }
-
-.text-home{
+.letras:hover{
+  color: #FFf;
+  text-decoration: none;
+  text-shadow: 
+      0 0 7px #fff,
+      0 0 21px #fff,
+      0 0 42px #FFC300,
+      0 0 82px #FFC300,
+      0 0 92px #FFC300;
+}
+/* .text-home{
     font-family: 'Franklin Gothic Medium', sans-serif;
 }
 
@@ -79,63 +116,68 @@
 
 .inputsz{
     width: 100%;
-}
+} */
 
-/* efecto neon */
-body{
-    margin: 0;
+/* HOME PAGE*/
+ body {
+
     padding: 0;
-    box-sizing: none;
     font-family: sans-serif; 
-    font-family: "Yellowtail", sans-serif;
-    background-color: #010a01;
     background-image: url(../Imagenes/interior.jpg);
-    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-}
-.container{
-    align-items: center;
+    display: flex;
     justify-content: center;
-    text-align: center;
+    flex-direction: column;
+    min-height: 100vh;
+
+
+} 
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+} 
+
+.container > * {
+  text-decoration: none;
+  color: #ffffff;
 }
+
+.imgcontainer  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    height: 55vh;
+
+
+}
+
+.imgcontainer img {
+
+    max-height: 30%;
+}
+
+
 .neonText {
-    color: #fff;
+    display: flex;
+    justify-content: center;
+    color: #ddd;
     padding-top: 15rem;
-    text-shadow:
-        0 0 7px #fff,
-        0 0 10px #fff,
-        0 0 21px #fff,
-        0 0 42px #5271ff,
-        0 0 82px #5271ff,
-        0 0 92px #5271ff,
-        0 0 102px #5271ff,
-        0 0 151px #5271ff;
+   
   }
 
-  h1, h2 {
-    text-align: center;
-    font-weight: 600;
-    font-size: 150px;
-    
-}
 
-/* formulario */
-.login-box{
-    position: absolute;
-    top:50%;
-    left: 50%;
-    width: 50%;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    background-color: #333;
-    box-shadow: 0 15px 25px rgba(143, 124, 236, 0.7);
-    border-radius: 10px;
-}
-.login-box h2{
-    font-size: 40px;
+/* LOGIN */
+.login-box h4{
+    font-size: 1.5rem;
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
@@ -154,110 +196,585 @@ body{
     background: transparent;
 }
 
-.login-box .user-box label{
-    position: relative;
-    left: 0;
-    top: -60px;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: 0.5s;
-}
-.login-box .user-box input:focus~label,
-.login-box .user-box input:valid~label{
-    top: -85px;
-    left: 0;
-    color: #8f7cec;
-    font-size: 12px;
-}
+
 #submit button{
     padding: 18px 20px;
-    color: #fff;
-    background-color: #8f7cec;
-    font-size: 18px;
+    color: #000000;
+    background-color: #ffffff;
+    font-size: 0.7rem;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
     letter-spacing: 4px;
-    border: 1px solid #8f7cec;
+    border: 1px solid #ffffff;
     margin: auto;
-}
-#submit:hover{
-    background-color: #8f7cec;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #8f7cec, 0 0 25px #8f7cec, 0 0 58px #8f7cec, 0 0 100px #8f7cec;
+    border-radius: 15px;
 }
 .button-form{
     display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-}
-#registrar{
-    font-size: 20px;
-    text-decoration: none;
-    color: #cbbddb;
-    margin-left: 15px;
-    width: 60%;
-    text-align: center;
-}
-#resgistrar button{
-    margin: auto;
-    font-size: 18px;
-    color: #fff;
-    background-color: #8f7cec;
-    text-decoration: none;
-}
-/* }
-.container{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: inline-flex;
-    filter: brightness(300%);
-    overflow: hidden;
-    background-image: ;
-}
-.txt{
-    color: #fff;
-    background: black;
-    font-size: 150px;
-    font-weight: bold;
-    margin: auto;
-}
-.txt:before{
-    content: 'Burguer Town';
-    position: absolute;
-    mix-blend-mode: difference;
-    filter: blur(2px);
-}
-.txt_gradient{
-    position: absolute;
-    top: 0;
-    left: 0;
+    justify-content: center;
     width: 100%;
+    padding: 5%;
+}
+
+.button-form button {
+  max-width: 10rem;
+  border-radius: 15px;
+
+  
+}
+
+#registrar {
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center ;
+    width: 100%;
+}
+
+
+
+
+/* CONTENIDO DEL MENU HAMBURGUESA */
+
+.menu-container  {
+
+    display: grid;
+    color: #ffffff;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 5rem;
+
+    
+}
+
+/*  CARDS */
+.card-container  {
+    border-radius: 18px;
+    text-align: center;
+    border: 0.1px solid yellow;
+    min-height: 32rem;
+}
+.imagen {
+    width: 100%;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+.desc {
+    height: 4.5rem;
+    padding: 2%;
+    font-size: small;
+}
+.buttonsdiv {
+  display: flex;
+  justify-content: space-around;
+  padding: 3%;
+}
+.buttonsdiv button {
+  padding: 2%;
+  text-align: center;
+  background-color: #FFC300;
+  color: #000000;
+  font-weight: 100;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  border: none;
+  margin-right: 10px;
+}
+.buttonsdiv button:hover {
+  text-align: center;
+  box-shadow:         
+  0 0 7px #fff,
+  0 0 21px #fff,
+  0 0 30px #FFC300;
+}
+.container-general {
+  padding: 10%;
+  /* display: flex; */
+  justify-content: center;
+}
+
+
+/* DETALLE HAMBURGUESA */
+
+.detalle-container {
+  padding: 6%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-detalle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  max-width: 40vw;
+  max-height: 50vh;
+  border-radius: 15px;
+  padding: 8%;
+
+}
+
+.cardimg-detalle {
+  border-radius: 15px;
+  padding: 2%;
+
+}
+
+.cardimg-detalle img {
+  width: 10vw;
+  min-width: 9rem;
+  border-radius: 15px;
+}
+
+.buttondetalle {
+  padding: 4%;
+}
+
+.buttondetalle button {
+  border-radius: 15px;
+}
+
+
+
+
+/* // ESTILOS CARRITO */
+
+.cartcss {
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  min-height: 80vh;
+}
+
+
+.carrito-container {
+  display: flex;
+  justify-content: center;
+  height: 55vh;
+  padding: 10%;
+}
+
+.carrito-detalle {
+  display: flex;
+  width: 40vw;
+  justify-content: space-between;
+  align-items: center;
+  height: 30vh;
+  color: #ffffff;
+  border-radius: 15px;
+  padding: 5%;
+}
+
+
+
+.carrito-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: 1px solid white;
+
+
+}
+
+.carrito-buttons {
+  min-width: 8%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.carrito-buttons button {
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  width: 2rem;
+  margin: 4px;
+}
+.textosCarrito {
+  color:#FFC300;
+  text-decoration: none;
+
+}
+
+
+
+
+/* LOGIN VIEW ESTILOS*/
+
+.login-view {
+  padding: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+.login-box {
+  background-color: #333;
+  border: 1px solid white;
+  border-radius: 10px;
+  max-width: 40vw;
+  padding: 3%;
+}
+
+
+
+
+/*ESTILOS REGISTRO*/
+
+.registro-container {
+
+  padding: 15%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.registrocss {
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  min-width: 80%;
+  text-align: center;
+  font-size: 0.8rem;
+
+}
+
+.registrocss input {
+  border-radius: 10px;
+  padding: 5px;
+  width: 40%;
+}
+
+
+/*ESTILOS PERFIL*/
+
+.perfilcss-container {
+  min-height: 80vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form1 input{
+  color: #fff;
+  background: transparent;
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+}
+
+  /* ESTILOS COMENTARIOS*/
+  .comentarios-css{
+    min-height: 80vh;
+    color: white;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+  }
+
+  .comentario-detalle{
+    max-width: 100vh;
+    max-height: 100vh;
+  }
+  
+
+/* ESTILOS LIKE HAMBURGUESAS*/
+.heart{
+  color: #fff;
+  fill: none;
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.5);
+  position: absolute;
+  margin-top: 15px;
+  margin-left: -50px;
+}
+
+.liked{
+  color: red;
+  fill: red;
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.5);
+  position: absolute;
+  margin-top: 15px;
+  margin-left: -50px;
+
+}
+
+
+/*ESTILOS FAVORITOS VIEW*/
+
+
+
+.favoritos-container {
+
+  display: flex;
+  min-height: 80vh;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.favoritosview {
+
+  color: white;
+  min-width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/*NOT FOUND VIEW*/
+
+
+.notfound {
+
+  display: flex;
+  min-height: 80vh;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.notfound h4 {
+
+  color: white;
+  text-align: center;
+}
+/* ESTILOS FOOTER FUERA DE MEDIA QUERI*/
+
+.footercss {
+  background-color: #FFC300;
+  display: flex;
+  min-height: 20vh;
+  padding: 2%;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto; 
+  min-width: 100%;
+
+}
+
+.footercss > * {
+
+  margin: 0.8rem;
+  font-size: 0.7rem;
+}
+
+
+
+
+
+/* RESPONSIVE MEDIA QUERIES */
+
+/* TAMAÑO PEQUEÑO */
+
+@media (max-width:550px) {
+
+
+  .menu-container {
+    grid-template-columns: repeat(1, 1fr);
+    
+  }
+  /* .seleccionFiltro{
+    flex-direction: column;
+    text-align: center;
+  } */
+
+
+  .footercss {
+    min-height: 50vh;
+    min-width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+  }
+  .barra {
+    position: relative;
+  }
+  .navbarFiltro{
+    background-color: #333;
+  }
+  .card-container {
+    margin-top: 10rem;
+  }
+  .detalle-container {
+    margin-top: 5rem;
+  }
+  .card-detalle {
+    min-width: 100vw;
+  }
+  .cartcss {
+    /* margin-top: 5rem; */
     height: 100%;
-    mix-blend-mode: multiply;
-    background: linear-gradient(45deg, 
-                rgb(6, 112, 250) 5%,
-                rgb(255, 0, 64) 97%);
+  }
+  .pedido{
+    display: none;
+  }
+  .cartcss div {
+    min-width: 100%;
+  }
+
+  .login-view {
+    margin-top: 8rem;
+    max-width: 80%;
+    margin: 5rem auto;
+
+  }
+  .login-box{
+    background-color: transparent;
+    border-color: transparent;
+  }
+  
+  .registro-container {
+    margin-top: 5rem;
+  }
+  .registro-container > * {
+    min-width: 100vw;
+  }
+  .registrocss > * {
+    min-width: 100vw;
+  }
+  .perfilcss-container {
+    min-height: 90vh;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .form1 input{
+    color: #fff;
+    background: transparent;
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+  }
+  .buttonLogin{
+    color: black;
+    background-color: #FFC300;
+  }
+  
+  .carrito-detalle {
+
+    flex-direction: column;
+    border: none;
+
+  }
+  .favoritos-container {
+    margin-top: 10rem;
+  }
 }
-.txt_dodge{
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    right: 0;
-    bottom: 0;
-    mix-blend-mode: color-dodge;
-    background: radial-gradient(circle,white,black 35%) 
-                center / 25% 25%;
-    animation: neon 3s linear infinite;
+
+/* TAMAÑO GRANDE */
+@media  (min-width:551px) {
+ 
+  .menu-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  /* .seleccionFiltro{
+    flex-direction: column;
+    text-align: center;
+  } */
+  
+  body {
+    background-repeat: repeat;
+
+  }
+
+  .login-box {
+    /* min-width: 100vw; */
+    background-color: transparent;
+    border-color: transparent;
+  }
+  
+
+  .perfilcss-container {
+    /* min-height: 90vh;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center; */
+
+    min-height: 80vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form1 input{
+    color: #fff;
+    background: transparent;
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+  }
+  
+
+  .cartcss {
+    /* margin-top: 5rem; */
+    height: 100%;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footercss {
+    /* min-height: 50vh;
+    min-width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center; */
+
+    background-color: #FFC300;
+    display: flex;
+    min-height: 20vh;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto; 
+    min-width: 100%;
+  }
+   
+  /* LOGIN VIEW ESTILOS MIN551PX*/
+
+.login-view {
+  padding: 15%;
+  display: flex;
+  justify-content: center;
 }
-@keyframes neon{
-    to{
-        transform: translate(50%, 50%);
-    }
-} */
+
+.login-box {
+  background-color: #333;
+  border: 1px solid white;
+  border-radius: 10px;
+  max-width: 40vw;
+  padding: 3%;
+}
+
+}
+
+.buttonLogin{
+  color: black;
+  background-color: #FFC300;
+} 
+
+/* IMAGEN ICONOS WS, INSTAGRAM */
+.imgws {
+    width: 4vh;
+}
+
